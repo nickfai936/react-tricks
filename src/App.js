@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import MouseTracker from "./components/MouseTracker";
+import Cat from "./components/Cat";
+import Kitten from "./components/Kitten";
+import useMouseTracker from "./components/useMouseTracker";
+import withMouseTracker from "./components/withMouseTracker";
+import "./App.css";
+
+// const CatWithMouse = withMouseTracker(Cat);
 
 function App() {
+  const mouse = useMouseTracker({});
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <MouseTracker render={mouse => <Cat mouse={mouse} />} /> */}
+      {/* <MouseTracker>{mouse => <Kitten mouse={mouse} />}</MouseTracker> */}
+      <Cat mouse={mouse} />
     </div>
   );
 }
